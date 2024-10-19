@@ -2,10 +2,10 @@ class Solution {
 public:
     int arrayPairSum(vector<int>& v) {
      sort(v.begin(), v.end());
-    int maxSum = 0;
+    int Sum = 0;
     for (int i=0; i<v.size(); i+=2) {
-        maxSum += v[i];
+        Sum = Sum + v[i];
     }
-    return maxSum;
+    return Sum;
     }
 };
