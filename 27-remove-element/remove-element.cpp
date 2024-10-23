@@ -1,15 +1,8 @@
 class Solution {
 public:
-    int removeElement(vector<int>& nums, int val) {
-        int k=0;
-        for(int i=0 ;i<nums.size() ;i++)
-        {
-            if(nums[i]!=val)
-            {
-                nums[k]=nums[i];
-                k++;
-            }
-        }
-        return k;
+    int removeElement(vector<int>& v, int val) {
+         v.erase(remove(v.begin(), v.end(), val), v.end());
+
+        return v.size();
     }
 };
