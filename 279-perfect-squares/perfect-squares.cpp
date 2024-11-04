@@ -1,13 +1,18 @@
 class Solution {
 public:
     int numSquares(int n) {
-        vector<int>v(n+1,INT_MAX);
-        v[0]=0;
-        for (int i=1; i<=n; i++) {
-        for (int j=1; j*j<=i; j++) {
-            v[i] = min(v[i], v[i-j*j] + 1);
+         int v[n+1];
+        v[0] = 0;
+        
+        for(int i=1;i<=n;++i)
+        {
+            v[i] = i;
+            for(int j=1;j*j<=i;++j)
+            {
+                int s = j*j;
+                v[i] = min(v[i],1+v[i-s]);
+            }
         }
-    }
-    return v[n];
+        return v[n];
     }
 };
